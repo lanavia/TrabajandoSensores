@@ -1,6 +1,7 @@
 package com.example.anavia.trabajandosensores
 
 import android.content.Context
+import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -9,6 +10,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.LinearLayout
+import java.nio.file.Files.find
+
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
 
@@ -59,7 +63,14 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         }
 
         btnBegin.setOnClickListener {
+            val androidColors = R.array.androidcolors
+            println( "androidColors $androidColors" )
+           /* int[] androidColors = getResources().getIntArray(R.array.androidcolors);
+            int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
+            view.setBackgroundColor(randomAndroidColor);*/
 
+            val linearlayout = findViewById(R.id.lyPosition) as LinearLayout
+            linearlayout.setBackgroundColor(Color.RED);
 
         }
 
